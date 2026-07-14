@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Gemini Auto Solver",
+  "version": "1.0.0",
+  "description": "Automatically solves LeetCode problems using Google Gemini API and pastes the solution directly into Monaco Editor.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://*.leetcode.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://*.leetcode.com/problems/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "solve-problem": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "MacCtrl+Shift+S"
+      },
+      "description": "Automatically solve the active LeetCode problem"
+    }
+  }
+}
