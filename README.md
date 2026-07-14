@@ -19,10 +19,10 @@ A modern, feature-rich Chrome Extension (Manifest V3) that automatically solves 
 
 The extension contains the following source files:
 
-- [`gjj/manifest.json`](file:///c:/Users/gunja/Downloads/gj/gjj/manifest.json): Extension configuration detailing permissions (`storage`, `scripting`, `activeTab`), match rules, background service worker, popup action, and hotkey shortcuts.
-- [`gjj/background.js`](file:///c:/Users/gunja/Downloads/gj/gjj/background.js): Orchestrates the entire solving pipeline. Communicates with content scripts, calls the Gemini API, normalizes prompt guidelines, adds necessary language imports (e.g. Python typings, Java utilities), and runs scripts in the main page context to write code to Monaco.
-- [`gjj/content.js`](file:///c:/Users/gunja/Downloads/gj/gjj/content.js): Content script running in the LeetCode page context. Handles GraphQL or DOM scraping of problem details, displays a custom toast status overlay, and triggers the submit button click.
-- **`gjj/popup/`**: The visual settings card and logs window.
+- [`LeetCode Auto Solver/manifest.json`](file:///c:/Users/gunja/Downloads/gj/gjj/manifest.json): Extension configuration detailing permissions (`storage`, `scripting`, `activeTab`), match rules, background service worker, popup action, and hotkey shortcuts.
+- [`LeetCode Auto Solver/background.js`](file:///c:/Users/gunja/Downloads/gj/gjj/background.js): Orchestrates the entire solving pipeline. Communicates with content scripts, calls the Gemini API, normalizes prompt guidelines, adds necessary language imports (e.g. Python typings, Java utilities), and runs scripts in the main page context to write code to Monaco.
+- [`LeetCode Auto Solver/content.js`](file:///c:/Users/gunja/Downloads/gj/gjj/content.js): Content script running in the LeetCode page context. Handles GraphQL or DOM scraping of problem details, displays a custom toast status overlay, and triggers the submit button click.
+- **`LeetCode Auto Solver/popup/`**: The visual settings card and logs window.
   - [`popup/popup.html`](file:///c:/Users/gunja/Downloads/gj/gjj/popup/popup.html): UI layout, selection options, and terminal container.
   - [`popup/popup.css`](file:///c:/Users/gunja/Downloads/gj/gjj/popup/popup.css): Styling for dark mode, toggles, custom buttons, scrollbars, and fonts.
   - [`popup/popup.js`](file:///c:/Users/gunja/Downloads/gj/gjj/popup/popup.js): Binds event handlers, saves preferences automatically using Chrome Sync storage, retrieves status logs, and triggers executions.
@@ -35,7 +35,7 @@ The extension contains the following source files:
 2. In Google Chrome, navigate to `chrome://extensions/`.
 3. Enable **Developer mode** in the top-right corner.
 4. Click **Load unpacked** in the top-left corner.
-5. Select the **`gjj`** folder from the file dialog.
+5. Select the **`LeetCode Auto Solver`** folder from the file dialog.
 
 ---
 
